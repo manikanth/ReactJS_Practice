@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+      rel="stylesheet"
+    />
     <title>30 Days Of React Challenge</title>
-  </head>
+    <style>
+      /* == General style === */
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
 
-  <body>
+      html,
+      body {
+        height: 100%;
+        line-height: 1.5;
+        font-family: 'Montserrat';
+        font-weight: 300;
+        color: black;
+      }
+
+      .root {
+        min-height: 100%;
+        position: relative;
+      }
+
+      .header-wrapper,
+      .main-wrapper,
+      .footer-wrapper {
+        width: 85%;
+        margin: auto;
+      }
+
+      .header-wrapper,
+      .main-wrapper {
+        padding: 10px;
+        margin: 2px auto;
+      }
+
+      h1 {
+        font-size: 70px;
+        font-weight: 300;
+      }
+
+      h2,
+      h3 {
+        font-weight: 300;
+      }
+
+      header {
+        background-color: #61dbfb;
+        padding: 10px;
+      }
+
+      main {
+        padding: 10px;
+        padding-bottom: 60px;
+        /* Height of the footer */
+      }
+
+      ul {
+        margin-left: 15px;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        /* Height of the footer */
+        background: #6cf;
+      }
+
+      .footer-wrapper {
+        font-weight: 400;
+        text-align: center;
+        line-height: 60px;
+      }
+    </style>
+</head>
+
+<body>
     <div class="root"></div>
 
     <script
@@ -24,37 +108,49 @@
 
       // JSX element, header
       const header = (
-          <header>
-                <h1>Welcome to 30 Days Of React</h1>
-                <h2>Getting Started React</h2>
-                <h3>JavaScript Library</h3>
-                <p>Asabeneh Yetayeh</p>
-                <small>Oct 2, 2020</small>
-            </header>
-        )
+        <header>
+          <div className='header-wrapper'>
+            <h1>Welcome to 30 Days Of React</h1>
+            <h2>Getting Started React</h2>
+            <h3>JavaScript Library</h3>
+            <p>Instructor: Asabeneh Yetayeh</p>
+            <small>Date: Oct 1, 2020</small>
+          </div>
+        </header>
+      )
 
       // JSX element, main
       const main = (
         <main>
-          <p>Prerequisite to get started react.js:</p>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
+          <div className='main-wrapper'>
+            <p>
+              Prerequisite to get started{' '}
+              <strong>
+                <em>react.js</em>
+              </strong>
+              :
+            </p>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li> JavaScript</li>
+            </ul>
+          </div>
         </main>
       )
 
       // JSX element, footer
       const footer = (
         <footer>
-          <p>Copyright 2020</p>
+          <div className='footer-wrapper'>
+            <p>Copyright 2020</p>
+          </div>
         </footer>
       )
 
-      // JSX element, app, a container or a parent
+      // JSX element, app
       const app = (
-        <div>
+        <div className='app'>
           {header}
           {main}
           {footer}
@@ -62,10 +158,8 @@
       )
 
       // we render the JSX element using the ReactDOM package
-      // ReactDOM has the render method and the render method takes two argument
-      ReactDOM.render(app, rootElement)
-      // or
-      //  ReactDOM.render([header, main, footer], rootElement)
+      ReactDOM.render(app, rootElement);
     </script>
-  </body>
+</body>
+
 </html>
