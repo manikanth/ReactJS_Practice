@@ -60,6 +60,8 @@ const Skills = (props) => {
   return <ul>{skillList}</ul>
 }
 
+const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+
 
 // The App, or the parent or the container component
 // Functional Component
@@ -90,6 +92,10 @@ const App = () => {
     date: new Date() // date needs to be formatted to a human readable format
   }
 
+  const sayHi = () => {
+    alert('Hi')
+  }
+
   return (
     <div className='app'>
       <Header data={data} />
@@ -97,7 +103,7 @@ const App = () => {
       <Weight weight={gravity*mass} />
       <Status status={status} />
       <Skills skills={['HTML', 'CSS', 'JavaScript']} />
-      
+      <Button text='Say hi' onClick={sayHi}/>
     </div>
   )
 }
